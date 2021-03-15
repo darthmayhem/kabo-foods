@@ -1,9 +1,13 @@
 # Kabo foods - Technical Assignment
 
-Prepared By: Steve Haight
+**Prepared By**: Steve Haight
 
-Date: March 15, 2021
+**Date**: March 15, 2021
 
+#### Install and Run
+```
+yarn && yarn start
+```
 
 ## Assignment Instructions
 
@@ -31,8 +35,8 @@ The project needs to have the following folders:
     - user.saga.js: add getAccountDataSaga using getAccountData function in user service.
     - index.js: rootSaga
 - services
- - authentication.services.js: Add login function using login API
- - user.service.js: Add userAccountData function using account data API.
+    - authentication.services.js: Add login function using login API
+    - user.service.js: Add userAccountData function using account data API.
 - store: 
     - index.js: Redux store
 
