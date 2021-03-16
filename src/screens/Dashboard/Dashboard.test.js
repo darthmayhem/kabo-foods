@@ -5,7 +5,7 @@ import HomeComponent from './index';
 
 import store from '../../store';
 
-describe('Home Component', () => {
+describe('Dashboard Component', () => {
   it('Renders', () => {
     const tree = renderer
       .create(<Provider store={store}><HomeComponent /></Provider>)

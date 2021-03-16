@@ -1,41 +1,23 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import { InputBase } from '@material-ui/core';
 import FacebookIcon from './FacebookIcon';
 import InstagramIcon from './InstagramIcon';
 
-const useStyles = makeStyles(theme => ({
-  footerTop: {
-    background: theme.palette.primary.main,
-    padding: '60px 175px',
-    color: 'white',
-  },
-  footerTopTitle: {
-    fontSize: '20px',
-    weight: 700,
-    lineHeight: '28px',
-    paddingBottom: '20px',
-  },
-  footerBottom: {
-    padding: '30px 175px',
-    background: theme.palette.primary.dark,
-    color: 'white',
-  },
-  socialIcon: {
-    padding: '0 6px',
-  }
-}));
+import styles from './styles';
 
 const Footer = () => {
-  const classes = useStyles();
+  const classes = styles.useStyles();
+  const titleClasses = styles.useTitleStyles();
 
   return (
     <>
       <div className={classes.footerTop}>
         <Grid container>
           <Grid item xs={12} md={2}>
-            <Typography className={classes.footerTopTitle}>About</Typography>
+            <Typography variant="h5" classes={titleClasses}>About</Typography>
             <Typography>
               Transition Guide
             </Typography>
@@ -50,7 +32,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography className={classes.footerTopTitle}>&nbsp;</Typography>
+            <Typography variant="h5" classes={titleClasses}>&nbsp;</Typography>
             <Typography>
               Log In
             </Typography>
@@ -62,7 +44,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={3}>
-            <Typography className={classes.footerTopTitle}>Questions?</Typography>
+            <Typography variant="h5" classes={titleClasses}>Questions?</Typography>
             <Typography>
               Email us anytime at help@kabo.co.
             </Typography>
@@ -71,15 +53,24 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={3}>
-            <Typography className={classes.footerTopTitle}>Join our Mailing List</Typography>
+            <Typography variant="h5" classes={titleClasses}>Join our Mailing List</Typography>
             <Typography>
               Get Kabo promotions and healthy feeding advice for your dog!
             </Typography>
+            <Grid container className={classes.signUpContainer}>
+              <Grid lg={6}>
+                <InputBase variant="outlined" className={classes.inputBase} placeholder="Your Email" />
+              </Grid>
+              <Grid lg={6}>
+                <Button variant="outlined" className={classes.submitButton}>Submit</Button>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </div>
+
       <div className={classes.footerBottom}>
-        <Grid container>
+        <Grid container alignItems="center">
           <Grid item md={6}>
             <span className={classes.socialIcon}>
               <FacebookIcon />

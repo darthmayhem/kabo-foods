@@ -1,9 +1,11 @@
 import { all, fork } from 'redux-saga/effects';
-import watchGetUsersSaga from './watchers/getUsers';
+import watchLoginSaga from './watchers/authentication.saga';
+import watchGetAccountDataSaga from './watchers/user.saga';
 
 const sagas = function* () {
   yield all([
-    fork(watchGetUsersSaga),
+    fork(watchLoginSaga),
+    fork(watchGetAccountDataSaga),
   ]);
 };
 

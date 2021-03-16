@@ -1,19 +1,21 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
+import { useDispatch } from 'react-redux';
 import Branding from './Branding';
-import HeaderMenuBar from './HeaderMenuBar';
-import HeaderActionBar from './HeaderActionBar';
+import MenuBar from './MenuBar';
+import ActionBar from './ActionBar';
+import { getAuthenticationSaga } from '../../actions';
 
-const useStyles = makeStyles(() => ({
-  container: {
-    padding: '51px 44px',
-  },
-}));
+import styles from './styles';
 
-const Header = ({ notifications }) => {
-  console.log(notifications);
-  const classes = useStyles();
+const Header = () => {
+  const classes = styles.useStyles();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAuthenticationSaga({ email: 'dev2@email.com', password: 'password' }));
+  }, [dispatch]);
+
   return (
     <div className={classes.container}>
       <Grid container>
@@ -23,12 +25,12 @@ const Header = ({ notifications }) => {
               <Branding />
             </Grid>
             <Grid item lg={10}>
-              <HeaderMenuBar />
+              <MenuBar />
             </Grid>
           </Grid>
         </Grid>
         <Grid item lg={5}>
-          <HeaderActionBar />
+          <ActionBar />
         </Grid>
       </Grid>
     </div>

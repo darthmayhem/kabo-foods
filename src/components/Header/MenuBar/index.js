@@ -1,37 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core';
 import classNames from 'classnames';
 import AddCircleOutlinedIcon from '@material-ui/icons/AddCircleOutlined';
-import theme from '../../../theme';
 
-const useStyles = makeStyles(() => ({
-  container: {
-    padding: '51px 44px',
-  },
-  button: {
-    padding: '2px 22px',
-  },
-  active: {
-    color: 'white',
-    backgroundColor: theme.palette.primary.main,
-  },
-  addLink: {
-    color: theme.palette.primary.main,
-  }
-}));
+import styles from './styles';
 
-const useButtonStyles = makeStyles(() => ({
-  root: {
-    padding: '2px 20px',
-    margin: '0 9px',
-  },
-}));
-
-const HeaderMenuBar = () => {
-  const classes = useStyles();
-  const buttonClasses = useButtonStyles();
+const MenuBar = () => {
+  const classes = styles.useStyles();
+  const buttonClasses = styles.useButtonStyles();
 
   return (
     <Grid container>
@@ -48,4 +25,4 @@ const HeaderMenuBar = () => {
   );
 };
 
-export default HeaderMenuBar;
+export default MenuBar;

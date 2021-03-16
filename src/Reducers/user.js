@@ -1,13 +1,13 @@
-import { SET_USERS } from '../constants';
+import { SET_USER } from '../constants';
 
-const initialState = { users: [] };
+const initialState = { accountData: {} };
 
 export default function setBrowserInfo(state = initialState, action) {
   switch (action.type) {
-    case SET_USERS:
+    case SET_USER:
       return {
         ...state,
-        users: action.users
+        accountData: action.accountData
       };
     default:
       return state;

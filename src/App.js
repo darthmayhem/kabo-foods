@@ -10,7 +10,7 @@ import store from './store';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import Home from './screens/Home';
+import Dashboard from './screens/Dashboard';
 
 import './App.css';
 
@@ -30,7 +30,7 @@ const App = () => {
           <BrowserRouter>
             <Header />
             <div>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Dashboard} />
             </div>
             <Footer />
           </BrowserRouter>

@@ -7,7 +7,7 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import PropTypes from 'prop-types';
 import { Badge } from '@material-ui/core';
 
-const HeaderActionBar = ({ notifications, cartItems }) => (
+const ActionBar = ({ notifications, cartItems }) => (
   <Grid container>
     <Grid item lg={12}>
       <Grid container justify="flex-end">
@@ -27,14 +27,14 @@ const HeaderActionBar = ({ notifications, cartItems }) => (
   </Grid>
 );
 
-HeaderActionBar.defaultProps = {
+ActionBar.defaultProps = {
   notifications: 2,
   cartItems: 2,
 };
 
-HeaderActionBar.propTypes = {
+ActionBar.propTypes = {
   notifications: PropTypes.number,
   cartItems: PropTypes.number,
 };
 
-export default HeaderActionBar;
+export default ActionBar;
