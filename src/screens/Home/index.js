@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Table } from 'semantic-ui-react';
-import { getUsersSaga } from '../../actions';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import TableBody from '@material-ui/core/TableBody';
+import Button from '@material-ui/core/Button';
 
+import { getUsersSaga } from '../../actions';
 import styles from './styles';
 
 const Home = () => {
@@ -18,23 +23,22 @@ const Home = () => {
   };
 
   return (
-    <div style={styles.container}>
-      {users && users.length > 0
+    <>
+      <div style={styles.container}>
+        {users && users.length > 0
             && (
-            <Table
-              striped
-            >
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell>Id</Table.HeaderCell>
-                  <Table.HeaderCell>Name</Table.HeaderCell>
-                  <Table.HeaderCell>Username</Table.HeaderCell>
-                  <Table.HeaderCell>E-mail</Table.HeaderCell>
-                  <Table.HeaderCell>Phone</Table.HeaderCell>
-                  <Table.HeaderCell>Website</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Id</TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Username</TableCell>
+                  <TableCell>E-mail</TableCell>
+                  <TableCell>Phone</TableCell>
+                  <TableCell>Website</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
                 {users.map(({
                   id,
                   name,
@@ -43,100 +47,31 @@ const Home = () => {
                   username,
                   website
                 }, i) => (
-                  <Table.Row key={i}>
-                    <Table.Cell>{id}</Table.Cell>
-                    <Table.Cell>{name}</Table.Cell>
-                    <Table.Cell>{username}</Table.Cell>
-                    <Table.Cell>{email}</Table.Cell>
-                    <Table.Cell>{phone}</Table.Cell>
-                    <Table.Cell>{website}</Table.Cell>
-                  </Table.Row>
+                  <TableRow key={i}>
+                    <TableCell>{id}</TableCell>
+                    <TableCell>{name}</TableCell>
+                    <TableCell>{username}</TableCell>
+                    <TableCell>{email}</TableCell>
+                    <TableCell>{phone}</TableCell>
+                    <TableCell>{website}</TableCell>
+                  </TableRow>
                 ))}
-              </Table.Body>
+              </TableBody>
             </Table>
             )
             }
-      <Button
-        color="teal"
-        onClick={handleBtnOnClick}
-      >
-        Load Users
-      </Button>
-    </div>
+        <br />
+        <Button
+          variant="outlined"
+          onClick={handleBtnOnClick}
+        >
+          Load Users
+        </Button>
+      </div>
+    </>
   );
 };
 
 Home.propTypes = {};
 
 export default Home;
-
-// class Home extends Component {
-//   constructor() {
-//     super();
-//     this.handleBtnOnClick = this.handleBtnOnClick.bind(this);
-//   }
-//
-//   handleBtnOnClick() {
-//     this.props.getUsersSaga();
-//   }
-//
-//   render() {
-//     const { users } = this.props;
-//     return (
-//       <div style={styles.container}>
-//         {users.length > 0
-//           && (
-//           <Table
-//             striped
-//           >
-//             <Table.Header>
-//               <Table.Row>
-//                 <Table.HeaderCell>Id</Table.HeaderCell>
-//                 <Table.HeaderCell>Name</Table.HeaderCell>
-//                 <Table.HeaderCell>Username</Table.HeaderCell>
-//                 <Table.HeaderCell>E-mail</Table.HeaderCell>
-//                 <Table.HeaderCell>Phone</Table.HeaderCell>
-//                 <Table.HeaderCell>Website</Table.HeaderCell>
-//               </Table.Row>
-//             </Table.Header>
-//             <Table.Body>
-//               {users.map(({
-//                 id,
-//                 name,
-//                 email,
-//                 phone,
-//                 username,
-//                 website
-//               }, i) => (
-//                 <Table.Row key={i}>
-//                   <Table.Cell>{id}</Table.Cell>
-//                   <Table.Cell>{name}</Table.Cell>
-//                   <Table.Cell>{username}</Table.Cell>
-//                   <Table.Cell>{email}</Table.Cell>
-//                   <Table.Cell>{phone}</Table.Cell>
-//                   <Table.Cell>{website}</Table.Cell>
-//                 </Table.Row>))}
-//             </Table.Body>
-//           </Table>
-//           )
-//         }
-//         <Button
-//           color="teal"
-//           onClick={this.handleBtnOnClick}
-//         >
-//           Load Users
-//         </Button>
-//       </div>
-//     );
-//   }
-// }
-//
-// const mapStateToProps = state => ({
-//   users: state.usersReducer.users
-// });
-//
-// const mapDispatchToProps = dispatch => ({
-//   getUsersSaga: () => dispatch(getUsersSaga())
-// });
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);
