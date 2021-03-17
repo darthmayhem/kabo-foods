@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Branding from './Branding';
 import MenuBar from './MenuBar';
 import ActionBar from './ActionBar';
-import { getAuthenticationSaga } from '../../actions';
+import { getAuthenticationSaga } from '../../../actions';
 
 import styles from './styles';
 
