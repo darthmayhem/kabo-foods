@@ -32,7 +32,7 @@ const steps = [
 const getStepIndex = (keyName, keyValue) => {
   for (let i = 0; i < steps.length; i++) {
     if (steps[i][keyName] === keyValue) {
-      return 1;
+      return i;
     }
   }
   return -1;
