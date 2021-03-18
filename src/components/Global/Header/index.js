@@ -1,24 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { useDispatch } from 'react-redux';
 import Branding from './Branding';
 import MenuBar from './MenuBar';
 import ActionBar from './ActionBar';
-import { getAuthenticationSaga } from '../../../actions';
 
 import styles from './styles';
 
 const Header = () => {
   const classes = styles.useStyles();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAuthenticationSaga({ email: 'dev2@email.com', password: 'password' }));
-  }, [dispatch]);
 
   return (
     <div className={classes.container}>
-      <Grid container>
+      <Grid container alignItems="center" spacing={1}>
         <Grid item lg={7}>
           <Grid container>
             <Grid item lg={2}>

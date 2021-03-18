@@ -1,5 +1,4 @@
-// const GET_USERS_SAGA = 'GET_USERS_SAGA';
-// const SET_USERS = 'SET_USERS';
+const USER_CREDENTIALS = { email: 'dev2@email.com', password: 'password' };
 
 const GET_AUTHENTICATION_SAGA = 'GET_AUTHENTICATION_SAGA';
 const SET_AUTHENTICATION = 'SET_AUTHENTICATION';
@@ -10,8 +9,7 @@ const SET_USER = 'SET_USER';
 const API_USER_ACCOUNT_DATA_URL = 'https://api-staging.kabo.co/api/v1/user/subscriptions';
 
 export {
-  // GET_USERS_SAGA,
-  // SET_USERS,
+  USER_CREDENTIALS,
   GET_AUTHENTICATION_SAGA,
   SET_AUTHENTICATION,
   API_AUTHENTICATION_URL,

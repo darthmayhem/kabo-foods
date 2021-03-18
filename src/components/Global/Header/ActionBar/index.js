@@ -5,8 +5,15 @@ import IconButton from '@material-ui/core/IconButton';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import PropTypes from 'prop-types';
-import { Badge } from '@material-ui/core';
+import Badge from '@material-ui/core/Badge';
 
+/**
+ * renders a header action bar
+ * @param {number} notifications - the notifications count
+ * @param {number} cartItems - the carts items count
+ * @returns {JSX.Element} - the component
+ * @constructor
+ */
 const ActionBar = ({ notifications, cartItems }) => (
   <Grid container>
     <Grid item lg={12}>

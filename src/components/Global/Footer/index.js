@@ -8,6 +8,11 @@ import InstagramIcon from './InstagramIcon';
 
 import styles from './styles';
 
+/**
+ * renders a global site footer
+ * @returns {JSX.Element} - the component
+ * @constructor
+ */
 const Footer = () => {
   const classes = styles.useStyles();
   const titleClasses = styles.useTitleStyles();
@@ -16,7 +21,7 @@ const Footer = () => {
     <>
       <div className={classes.footerTop}>
         <Grid container>
-          <Grid item xs={12} md={2}>
+          <Grid item lg={2}>
             <Typography variant="h5" classes={titleClasses}>About</Typography>
             <Typography>
               Transition Guide
@@ -31,7 +36,7 @@ const Footer = () => {
               Press
             </Typography>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item lg={4}>
             <Typography variant="h5" classes={titleClasses}>&nbsp;</Typography>
             <Typography>
               Log In
@@ -43,7 +48,7 @@ const Footer = () => {
               +1 (844) 543-5226
             </Typography>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item lg={3}>
             <Typography variant="h5" classes={titleClasses}>Questions?</Typography>
             <Typography>
               Email us anytime at help@kabo.co.
@@ -58,10 +63,10 @@ const Footer = () => {
               Get Kabo promotions and healthy feeding advice for your dog!
             </Typography>
             <Grid container className={classes.signUpContainer}>
-              <Grid lg={6}>
+              <Grid item lg={6}>
                 <InputBase variant="outlined" className={classes.inputBase} placeholder="Your Email" />
               </Grid>
-              <Grid lg={6}>
+              <Grid item lg={6}>
                 <Button variant="outlined" className={classes.submitButton}>Submit</Button>
               </Grid>
             </Grid>

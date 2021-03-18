@@ -4,7 +4,7 @@
 
 **Date**: March 15, 2021
 
-#### Install and Run
+### Install and Run
 ```
 yarn && yarn start
 ```

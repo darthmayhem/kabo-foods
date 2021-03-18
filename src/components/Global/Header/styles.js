@@ -2,10 +2,11 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   container: {
-    marginLeft: '44px',
-    marginRight: '44px',
-    marginTop: '44px',
-    marginBottom: '44px',
+    paddingLeft: '44px',
+    paddingRight: '44px',
+    paddingTop: '44px',
+    paddingBottom: '44px',
+    backgroundColor: 'white',
   },
 }));
 

@@ -4,13 +4,22 @@ import { GET_AUTHENTICATION_SAGA } from '../../constants';
 import { setAuthentication } from '../../actions';
 import login from '../../services/authentication.services';
 
-const workerLoginSaga = function* (action) {
+/**
+ * login saga
+ * @param {object} action - the action object
+ * @returns {Generator<Promise<any>|SimpleEffect<"PUT", PutEffectDescriptor<{type: string, authentication}>>, void, *>}
+ */
+const loginSaga = function* (action) {
   const authentication = yield login(action.payload);
   yield put(setAuthentication(authentication));
 };
 
+/**
+ * login saga watcher
+ * @returns {Generator<SimpleEffect<"FORK", ForkEffectDescriptor<never>>, void, *>}
+ */
 const watchLoginSaga = function* () {
-  yield takeLatest(GET_AUTHENTICATION_SAGA, workerLoginSaga);
+  yield takeLatest(GET_AUTHENTICATION_SAGA, loginSaga);
 };
 
 export default watchLoginSaga;

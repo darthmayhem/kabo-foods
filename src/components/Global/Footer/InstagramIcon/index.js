@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * renders an instagram icon
+ * @returns {JSX.Element} - the component
+ * @constructor
+ */
 const InstagramIcon = () => (
   <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M13 24.6C19.4065 24.6 24.6 19.4065 24.6 13C24.6 6.59349 19.4065 1.39999 13 1.39999C6.59352 1.39999 1.40002 6.59349 1.40002 13C1.40002 19.4065 6.59352 24.6 13 24.6Z" stroke="white" />

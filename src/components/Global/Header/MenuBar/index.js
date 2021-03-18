@@ -6,6 +6,11 @@ import AddCircleOutlinedIcon from '@material-ui/icons/AddCircleOutlined';
 
 import styles from './styles';
 
+/**
+ * renders the header menu bar
+ * @returns {JSX.Element} - the component
+ * @constructor
+ */
 const MenuBar = () => {
   const classes = styles.useStyles();
   const buttonClasses = styles.useButtonStyles();
